@@ -1,0 +1,7 @@
+base:
+  # Number from 0%-100%
+  double-chance: 5.0
+
+leveling:
+  # Number from 0%-100%
+  double-chance: 1.0

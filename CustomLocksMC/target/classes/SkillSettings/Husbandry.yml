@@ -1,0 +1,24 @@
+base:
+  # Number from 0%-100%
+  increased-drop-chance: 5.0
+
+  # Number from 0%-100%
+  increased-drops-from-kills: 5.0
+
+  # Number from 0%-100%
+  chance-of-multi-breeding: 5.0
+
+  # Number from 0%-100%
+  instant-adult-while-breeding: 5.0
+
+leveling:
+  # Number from 0%-100%
+  increased-drop-chance: 1.0
+
+  increased-drops-from-kills: 5.0
+
+  # Number from 0%-100%
+  chance-of-multi-breeding: 5.0
+
+  # Number from 0%-100%
+  instant-adult-while-breeding: 5.0

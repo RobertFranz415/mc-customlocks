@@ -1,0 +1,36 @@
+lockpicking:
+  xp-to-first-level: 100
+  increase-set-number: false
+  increase: 5.0
+farming:
+  xp-to-first-level: 100
+  increase-set-number: false
+  increase: 5.0
+stamina:
+  xp-to-first-level: 100
+  increase-set-number: false
+  increase: 5.0
+salvage:
+  xp-to-first-level: 100
+  increase-set-number: false
+  increase: 5.0
+husbandry:
+  xp-to-first-level: 100
+  increase-set-number: false
+  increase: 5.0
+strength:
+  xp-to-first-level: 100
+  increase-set-number: false
+  increase: 5.0
+cooking:
+  xp-to-first-level: 100
+  increase-set-number: false
+  increase: 5.0
+ranged:
+  xp-to-first-level: 100
+  increase-set-number: false
+  increase: 5.0
+stealth:
+  xp-to-first-level: 100
+  increase-set-number: false
+  increase: 5.0

@@ -1,0 +1,5 @@
+starting-health: 10.0
+starting-stamina: 100.0
+
+# Default number in seconds.
+default-stamina-regen: 1.0

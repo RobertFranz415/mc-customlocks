@@ -1,0 +1,10 @@
+base:
+  # Number of blocks
+  detection-radius: 1.0
+
+  # Number from 0%-100%
+  detection-chance: 95.0
+
+leveling:
+  # Number from 0%-100%
+  detection-reduction: 1.0

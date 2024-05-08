@@ -1,0 +1,10 @@
+com\valiantrealms\customlocksmc\commands\ZmcSub\Reload.class
+com\valiantrealms\customlocksmc\Locks\Locks.class
+com\valiantrealms\customlocksmc\commands\LockMenu.class
+com\valiantrealms\customlocksmc\Locks\Minigames.class
+com\valiantrealms\customlocksmc\util\ConfigUtil.class
+com\valiantrealms\customlocksmc\util\Keys.class
+com\valiantrealms\customlocksmc\util\ItemUtil.class
+com\valiantrealms\customlocksmc\util\CountdownTimer.class
+com\valiantrealms\customlocksmc\CustomLocksMC.class
+com\valiantrealms\customlocksmc\util\DelayedTask.class

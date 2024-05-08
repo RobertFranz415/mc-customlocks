@@ -1,0 +1,9 @@
+example.perm:
+  cooking:
+    saturation:
+      base: 10.0
+      increase-per-level: 0.2
+    returned-hunger:
+      base: 120.0
+      increase-per-level: 0.2
+    points-given-per-level-up: 2.0

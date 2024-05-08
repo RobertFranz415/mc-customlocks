@@ -1,0 +1,7 @@
+base:
+  # Number from 0%-100%
+  base-resource-return: 10.0
+
+leveling:
+  # Number from 0%-100%
+  resource-return-increase: 1.0

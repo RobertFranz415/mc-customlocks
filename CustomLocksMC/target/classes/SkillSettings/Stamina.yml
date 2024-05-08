@@ -1,0 +1,6 @@
+base:
+  stamina: 100.0
+
+leveling:
+  # Applied per level
+  stamina-increase: 1.0

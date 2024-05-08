@@ -1,0 +1,9 @@
+base:
+  # Number from 0%-100%
+  success-chance: 5.0
+  break-pick-chance: 1.0
+
+leveling:
+  # Number from 0%-100%
+  chance-increase: 5.0
+  break-pick-chance: 1.0

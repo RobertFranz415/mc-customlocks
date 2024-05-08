@@ -1,0 +1,94 @@
+custom-perms: false
+
+cooking:
+  saturation:
+    base: 5.0
+    increase-per-level: 0.1
+  returned-hunger:
+    base: 100.0
+    increase-per-level: 0.1
+  points-given-per-level-up: 1.0
+
+farming:
+  auto-grow:
+    base-chance: 5.0
+    chance-increase-per-level: 0.1
+    max-chance: 80.0
+  multi-harvest:
+    base-chance: 1.0
+    max-chance: 80.0
+    increase-per-level: 0.1
+    max-items: 5
+  points-given-per-level-up: 1.0
+
+husbandry:
+  instant-adult:
+    base-chance: 5.0
+    increase-per-level: 0.1
+    max-chance: 80.0
+  multi-breeding:
+    base-chance: 5.0
+    increase-per-level: 5.0
+    max-chance: 80.0
+  multi-drop:
+    base-chance: 5.0
+    increase-per-level: 0.1
+    max-chance: 80.0
+    max-drops: 3
+  points-given-per-level-up: 1.0
+
+lockpicking:
+  success:
+    base-chance: 10.0
+    increase-per-level: 0.1
+    max-chance: 95.0
+  points-given-per-level-up: 1.0
+
+# number starting from 0.0. Equation is: final damage = damage + (original damage * (unarmed level * crit chance increase))
+ranged:
+  crit:
+    multiplier: 2.0
+    chance-increase-per-level: 0.1
+    max-chance: 80.0
+  damage:
+    base: 1.0
+    increase-per-level: 0.5
+  reload-speed: 1.0 #maybe
+  points-given-per-level-up: 1.0
+
+salvage:
+  base-resource-return: 10.0
+  resource-return-increase-per-level: 1.0
+  points-given-per-level-up: 1.0
+
+stealth:
+  detection:
+    default-radius: 35.0
+    radius-reduction-per-level: 0.01
+    min-radius: 10.0
+  points-given-per-level-up: 1.0
+
+stamina:
+  base: 100.0
+  increase-per-level: 1.0
+  regen-rate:
+    default: 1.0
+    increase-per-level: 0.1
+  points-given-per-level-up: 1.0
+
+# number starting from 0.0. Equation is: final damage = damage + (original damage * (unarmed level * crit chance increase))
+strength:
+  crit:
+    base-chance: 5.0
+    multiplier: 2.0
+    chance-increase-per-level: 0.1
+    max-chance: 80.0
+  health:
+    base: 10.0
+    increase-per-level: 1.0
+  damage:
+    base: 1.0
+    increase-per-level: 0.1
+  points-given-per-level-up: 1.0
+  mine-speed-multiplier: 1.0 #maybe
+  jump-height-multiplier: 1.0 #maybe

@@ -1,0 +1,55 @@
+colors:
+  easy:
+    length: 3
+  normal:
+    length: 5
+  hard:
+    length: 7
+  impossible:
+    length: 10
+
+pattern:
+  easy:
+    amount: 3
+    rows: 3
+  normal:
+    amount: 5
+    rows: 4
+  hard:
+    amount: 10
+    rows: 4
+  impossible:
+    amount: 15
+    rows: 5
+
+chimp:
+  easy:
+    amount: 3
+  normal:
+    amount: 5
+  hard:
+    amount: 10
+  impossible:
+    amount: 15
+
+mole:
+  easy:
+    errors: 3
+    length: 5
+    fail-time: 3
+    flash-time: 2
+  normal:
+    errors: 2
+    length: 10
+    fail-time: 3
+    flash-time: 2
+  hard:
+    errors: 1
+    length: 15
+    fail-time: 3
+    flash-time: 2
+  impossible:
+    errors: 0
+    length: 20
+    fail-time: 2
+    flash-time: 1

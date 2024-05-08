@@ -1,0 +1,77 @@
+colors:
+  easy:
+    # Sequence length
+    length: 3
+    # Range for number of colors.  Left Min: 0. Right Max: 8
+    left: 2
+    right: 6
+  normal:
+    length: 5
+    left: 2
+    right: 6
+  hard:
+    length: 7
+    left: 2
+    right: 6
+  impossible:
+    length: 10
+    left: 0
+    right: 8
+
+pattern:
+  easy:
+    # Number of slots the player has to memorize.  Must be less than grid size.
+    amount: 3
+    # Size of grid.  Grid = 9 * rows
+    rows: 3
+    # Number of incorrect answers before fail
+    errors: 3
+  normal:
+    amount: 5
+    rows: 4
+    errors: 3
+  hard:
+    amount: 10
+    rows: 4
+    errors: 3
+  impossible:
+    amount: 15
+    rows: 5
+    errors: 3
+
+chimp:
+  easy:
+    # Number of slots the player has to memorize
+    amount: 3
+  normal:
+    amount: 5
+  hard:
+    amount: 10
+  impossible:
+    amount: 15
+
+mole:
+  easy:
+    # Number of slots the player missed before fail
+    errors: 3
+    # Run time of whack a mole in seconds
+    length: 5
+    # time to click slot before fail in seconds
+    fail-time: 3
+    # Time in between new slots in seconds
+    flash-time: 2
+  normal:
+    errors: 2
+    length: 10
+    fail-time: 3
+    flash-time: 2
+  hard:
+    errors: 1
+    length: 15
+    fail-time: 3
+    flash-time: 2
+  impossible:
+    errors: 0
+    length: 20
+    fail-time: 2
+    flash-time: 1

@@ -1,0 +1,12 @@
+name: CustomLocksMC
+version: '1.0.0'
+main: com.valiantrealms.customlocksmc.CustomLocksMC
+api-version: '1.20'
+authors: [DeathsValentine, Mithraea]
+Prefix: CustomLocksMC
+
+commands:
+  customlockpick:
+    description: Opens custom lock menu.
+    usage: /customlockpick
+    aliases: clp

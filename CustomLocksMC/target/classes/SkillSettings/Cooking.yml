@@ -1,0 +1,6 @@
+base:
+  health-regen: 1.0
+
+leveling:
+  saturation-increase: 1.0
+  extra-hunger-given: 1.0
