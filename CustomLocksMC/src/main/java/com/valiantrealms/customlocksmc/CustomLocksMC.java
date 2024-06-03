@@ -9,10 +9,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.Objects;
 
 public final class CustomLocksMC extends JavaPlugin {
+    private ConfigUtil diffConfig;
 
     @Override
     public void onEnable() {
         Bukkit.getLogger().info("Enabling CustomLocksMC");
+
+        this.saveResource("LockPickDifficulties.yml", false);
+        this.diffConfig = new ConfigUtil(this, "LockPickDifficulties.yml");
+
 
         // Enabling commands
         Objects.requireNonNull(getCommand("customlockpick")).setExecutor(new LockMenu(this));
@@ -28,6 +33,13 @@ public final class CustomLocksMC extends JavaPlugin {
         Bukkit.getLogger().info("Disabling CustomLocksMC");
     }
 
+    public ConfigUtil getDiffConfig() {
+        return this.diffConfig;
+    }
+    public void setDiffConfig(ConfigUtil diffConfig) {
+        this.diffConfig = diffConfig;
+        diffConfig.save();
+    }
 
     public static CustomLocksMC getInstance() {
         return getPlugin(CustomLocksMC.class);

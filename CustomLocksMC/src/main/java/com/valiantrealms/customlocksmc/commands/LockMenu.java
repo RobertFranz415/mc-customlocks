@@ -19,11 +19,8 @@ import org.bukkit.persistence.PersistentDataType;
 
 import java.util.*;
 
-//TODO
-// Add loot to chests
 public class LockMenu implements Listener, CommandExecutor {
     private final CustomLocksMC plugin;
-    private final String invName = "Unlock Chest";
 
     public LockMenu(CustomLocksMC plugin) {
         Bukkit.getPluginManager().registerEvents(this, plugin);
@@ -52,9 +49,10 @@ public class LockMenu implements Listener, CommandExecutor {
      */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!sender.isOp() || !sender.hasPermission("customKeys.spawn")) return true;
 
         Player player = (Player) sender;
-        Inventory inv = Bukkit.createInventory(player, 9 * 4, this.invName);
+        Inventory inv = Bukkit.createInventory(player, 9 * 4, "Unlock Chest");
 
         inv.setItem(5, getKey());
         inv.setItem(6, getAdminKey());

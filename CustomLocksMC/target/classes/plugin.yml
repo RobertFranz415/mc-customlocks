@@ -2,7 +2,7 @@ name: CustomLocksMC
 version: '1.0.0'
 main: com.valiantrealms.customlocksmc.CustomLocksMC
 api-version: '1.20'
-authors: [DeathsValentine, Mithraea]
+authors: [Mithraea]
 Prefix: CustomLocksMC
 
 commands:
@@ -10,3 +10,12 @@ commands:
     description: Opens custom lock menu.
     usage: /customlockpick
     aliases: clp
+    permission: customkeys.spawn
+    permission-message: You do not have permission to run this command.
+permissions:
+  customKeys.spawn:
+    description: Allows the user to open the menu containing the admin key and custom keys
+    default: op
+  customKeys.adminKey:
+    description: Allows the user to use the admin key and edit chests.
+    default: op

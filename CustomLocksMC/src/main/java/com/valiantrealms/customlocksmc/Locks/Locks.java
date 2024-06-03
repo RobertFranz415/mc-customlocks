@@ -28,6 +28,7 @@ public class Locks implements Listener {
 
     // currentBlockMap is the block the player is currently interacting with
     private final HashMap<UUID, TileState> currentBlockMap = new HashMap<>();
+    //TODO Make autolocktimer configurable... possibly use persistent data
     private final int autoLockTimer = 10;
 
     public Locks(CustomLocksMC plugin) {
@@ -78,6 +79,10 @@ public class Locks implements Listener {
         }
     }
 
+    /**
+     *
+     * @param event A block is clicked on by a player holding a custom key.
+     */
     @EventHandler
     private void openLockedEvent(PlayerInteractEvent event) {
         try {
@@ -109,7 +114,6 @@ public class Locks implements Listener {
                         item.setAmount(item.getAmount() - 1);
                         event.setCancelled(true);
                         this.currentBlockMap.put(player.getUniqueId(), state);
-                        //this.minigames.initVars(player.getUniqueId());
                         this.runRandomSeq(player.getUniqueId());
                     } else {
                         event.getPlayer().sendMessage("You need a key!");
@@ -171,6 +175,13 @@ public class Locks implements Listener {
             if (!itemContainer.has(Keys.ADMIN_KEY, PersistentDataType.BOOLEAN)) {
                 return;
             }
+            //TODO Decide whether a permission is needed to use the admin key
+
+            if (!event.getPlayer().isOp() || !event.getPlayer().hasPermission("customKeys.adminKey")) {
+                player.sendMessage(ChatColor.RED + "You do not have permission to usa this key!");
+                event.setCancelled(true);
+                return;
+            }
             event.setCancelled(true);
             this.currentBlockMap.put(player.getUniqueId(), state);
 
@@ -192,6 +203,9 @@ public class Locks implements Listener {
             if (!blockContainer.has(Keys.LOCKABLE, PersistentDataType.BOOLEAN)) {
                 //Bukkit.getLogger().info("Lockability not already set... Setting as off.");
                 blockContainer.set(Keys.LOCKABLE, PersistentDataType.BOOLEAN, Boolean.FALSE);
+            }
+            if (!blockContainer.has(Keys.LOCK_LIST, PersistentDataType.STRING)) {
+                blockContainer.set(Keys.LOCK_LIST, PersistentDataType.STRING, "");
             }
 
             this.displayEditInv(player.getUniqueId());
@@ -231,9 +245,9 @@ public class Locks implements Listener {
 
             inv.setItem(4, this.itemUtil.getItem(new ItemStack(Material.CHEST), "Settings Applied", "Difficulty: " + difficulty, "Auto Lock: " + autoLock, "", (locksList.contains("colors") ? "Colors Lock" : ""), (locksList.contains("pattern") ? "Pattern Lock" : ""), (locksList.contains("chimp") ? "Chimp Lock" : ""), (locksList.contains("mole") ? "Mole Lock" : "")));
 
-            inv.setItem(11, this.itemUtil.getItem(new ItemStack(Material.RED_STAINED_GLASS_PANE), colorsStr, "Simon Says."));
+            inv.setItem(11, this.itemUtil.getItem(new ItemStack(Material.RED_STAINED_GLASS_PANE), colorsStr, "Remember the order of the colors."));
             inv.setItem(12, this.itemUtil.getItem(new ItemStack(Material.BAMBOO_HANGING_SIGN), patternStr, "Remember the pattern."));
-            inv.setItem(13, this.itemUtil.getItem(new ItemStack(Material.AXOLOTL_BUCKET), chimpStr, "Remember the order."));
+            inv.setItem(13, this.itemUtil.getItem(new ItemStack(Material.AXOLOTL_BUCKET), chimpStr, "Remember the order of boxes."));
             inv.setItem(14, this.itemUtil.getItem(new ItemStack(Material.EGG), moleStr, "Whack a mole."));
             inv.setItem(15, this.itemUtil.getItem(new ItemStack(Material.DIAMOND_BLOCK), allStr, "Lock pick minigame rotation."));
 
@@ -343,6 +357,11 @@ public class Locks implements Listener {
     }
 
     public void runRandomSeq(UUID uuid) {
+//        if (this.currentBlockMap.get(uuid).getPersistentDataContainer().get(Keys.LOCK_LIST, PersistentDataType.STRING) == null) {
+//            this.openBlock(uuid);
+//            return;
+//        }
+
         String str = this.currentBlockMap.get(uuid).getPersistentDataContainer().get(Keys.LOCK_LIST, PersistentDataType.STRING);
 
         // If no minigames selected, open chest
@@ -350,7 +369,6 @@ public class Locks implements Listener {
             this.openBlock(uuid);
             return;
         }
-
         String[] arr = str.split("::");
 
         Random rand = new Random();

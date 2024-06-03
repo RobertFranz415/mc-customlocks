@@ -44,9 +44,10 @@ public class Minigames implements Listener {
 
         this.initVars();
 
+        //TODO see if its okay not not have to create a new config everytime called
         this.difficulty = this.locks.getCurrentBlockMap().get(uuid).getPersistentDataContainer().get(Keys.DIFFICULTY_SETTING, PersistentDataType.STRING).toLowerCase();
-        this.diffConfig = new ConfigUtil(plugin, "LockPickDifficulties.yml");
-        this.diffConfig.save();
+        this.diffConfig = plugin.getDiffConfig();
+        plugin.setDiffConfig(this.diffConfig);
 
         this.keyMap.put(0, this.itemUtil.getItem(new ItemStack(Material.CYAN_STAINED_GLASS_PANE), ChatColor.BLUE + "CYAN", ""));
         this.keyMap.put(1, this.itemUtil.getItem(new ItemStack(Material.ORANGE_STAINED_GLASS_PANE), ChatColor.YELLOW + "ORANGE", ""));
